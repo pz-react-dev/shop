@@ -15,7 +15,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/delete.js'])
 </head>
 
 <body>
@@ -57,8 +57,8 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
-                                <a class="dropdown-item" href="/users/list" role="button">Users</a>
+                                <a class="dropdown-item" href="/products" role="button">Products</a>
+                                <a class="dropdown-item" href="/users" role="button">Users</a>
 
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -80,6 +80,7 @@
             @yield('content')
         </main>
     </div>
+    @stack('js-files')
 </body>
 
 </html>

@@ -95,7 +95,13 @@
               <label for="image" class="col-md-4 col-form-label text-md-end">Zdjęcie</label>
 
               <div class="col-md-6">
-                <input id="image" class="form-control" type="file" name="image" value="$product->image_path">
+                <input id="image" class="form-control @error('image') is-invalid @enderror" type="file" name="image" value="$product->image_path">
+
+                @error('image')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
               </div>
             </div>
 

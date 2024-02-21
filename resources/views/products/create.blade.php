@@ -89,6 +89,12 @@
 
                             <div class="col-md-6">
                                 <input id="image" class="form-control" type="file" name="image">
+
+                                @error('image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 

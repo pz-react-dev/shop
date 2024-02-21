@@ -46,7 +46,9 @@
                             </div>
                             <div class="card-body text-center">
                                 <h4 class="card-title">
-                                    <a href="product.html" class=" font-weight-bold text-dark text-uppercase small">{{$product->name}}</a>
+                                    <!-- <a href="product.html" class=" font-weight-bold text-dark small"> -->
+                                    {{$product->name}}
+                                    <!-- </a> -->
                                 </h4>
                                 <h5 class="card-price text-info">
                                     <i>PLN {{$product->price}}</i>

@@ -17,7 +17,7 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Nazwa</th>
-          <th scope="col">Opis</th>
+          <th scope="col-4">Opis</th>
           <th scope="col">Ilość</th>
           <th scope="col">J.m.</th>
           <th scope="col">Cena</th>
@@ -28,8 +28,8 @@
         @foreach($products as $product)
         <tr>
           <th scope="row">{{$product->id}}</th>
-          <td>{{$product->name}}</td>
-          <td>{{$product->description}}</td>
+          <td class="col-2">{{$product->name}}</td>
+          <td class="col-6">{{$product->description}}</td>
           <td>{{$product->amount}}</td>
           <td>{{$product->unit}}</td>
           <td>{{$product->price}}</td>

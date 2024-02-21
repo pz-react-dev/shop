@@ -63,6 +63,14 @@
             </div>
           </div>
 
+          <div class="row mb-3">
+            <label for="image" class="col-md-4 col-form-label text-md-end">Zdjęcie</label>
+
+            <div class="col-md-6">
+              <input id="image" class="form-control" type="file" name="image" disabled>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

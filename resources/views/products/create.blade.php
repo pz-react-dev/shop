@@ -8,7 +8,7 @@
                 <div class="card-header">Nowy produkt</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('products.store') }}">
+                    <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
@@ -84,6 +84,13 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="image" class="col-md-4 col-form-label text-md-end">Zdjęcie</label>
+
+                            <div class="col-md-6">
+                                <input id="image" class="form-control" type="file" name="image">
+                            </div>
+                        </div>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

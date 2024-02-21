@@ -20,5 +20,6 @@ class Product extends Model
         'amount',
         'unit',
         'price',
+        'image_path',
     ];
 }

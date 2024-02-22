@@ -21,18 +21,20 @@
           <th scope="col">Ilość</th>
           <th scope="col">J.m.</th>
           <th scope="col">Cena</th>
+          <th scope="col">Kategoria</th>
           <th scope="col">Akcje</th>
         </tr>
       </thead>
       <tbody>
         @foreach($products as $product)
         <tr>
-          <th scope="row">{{$product->id}}</th>
-          <td class="col-2">{{$product->name}}</td>
-          <td class="col-6">{{$product->description}}</td>
-          <td>{{$product->amount}}</td>
-          <td>{{$product->unit}}</td>
-          <td>{{$product->price}}</td>
+          <th scope="row">{{ $product->id }}</th>
+          <td class="col-2">{{ $product->name }}</td>
+          <td class="col-6">{{ $product->description }}</td>
+          <td>{{ $product->amount }}</td>
+          <td>{{ $product->unit }}</td>
+          <td>{{ $product->price }}</td>
+          <td>@if( $product->hasCategory() ){{ $product->category->name }}@endif</td>
           <td>
             <a href="{{route('products.edit',$product->id)}}">
               <button class="btn btn-success btn-sm ">E</button>

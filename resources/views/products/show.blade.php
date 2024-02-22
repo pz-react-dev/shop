@@ -64,6 +64,20 @@
           </div>
 
           <div class="row mb-3">
+            <label for="category_id" class="col-md-4 col-form-label text-md-end">Kategoria</label>
+
+            <div class="col-md-6">
+              <select id="category_id" type="text" class="form-select" name="category_id" value="{{ old('category_id') }}" disabled>
+                @if($product->hasCategory())
+                <option>{{ $product->category->name }}</option>
+                @else
+                <option>Brak</option>
+                @endif
+              </select>
+            </div>
+          </div>
+
+          <div class="row mb-3">
             <label for="image" class="col-md-4 col-form-label text-md-end">Zdjęcie</label>
 
             <div class="col-md-6">

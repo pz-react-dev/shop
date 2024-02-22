@@ -28,6 +28,34 @@ class StoreProductRequest extends FormRequest
             'unit' => 'required',
             'price' => 'required|numeric|between:0,99999.99',
             'image' => 'nullable|image|mimes:jpg,png',
+            'category_id' => 'nullable|integer|min:1',
+        ];
+    }
+
+    //Alternatywny sposob na tlumaczenie - Sposob I
+    // public function messages()
+    // {
+    //     return [
+    //         'name' => 'Pole nazwa produktu jest wymagane.',
+    //         'description' => 'Pole opis produktu jest wymagane.',
+    //     ];
+    // }
+
+
+    //Alternatywny sposob na tlumaczenie - Sposob II
+    public function messages()
+    {
+        return [
+            'name.required' => 'Pole :attribute jest wymagane.',
+            'description.required' => 'Pole :attribute jest wymagane.',
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'name' => 'nazwa produktu',
+            'description' => 'opis produktu',
         ];
     }
 }

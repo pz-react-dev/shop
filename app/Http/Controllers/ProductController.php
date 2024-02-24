@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Models\Product;
 use App\Models\ProductCategory;
-use Illuminate\Http\Request;
 use Exception;
 
 class ProductController extends Controller
@@ -16,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         return view('products.index', [
-            'products' => Product::paginate(10)
+            'products' => Product::paginate(10),
         ]);
     }
 
@@ -26,7 +25,7 @@ class ProductController extends Controller
     public function create()
     {
         return view('products.create', [
-            'categories' => ProductCategory::all()
+            'categories' => ProductCategory::all(),
         ]);
     }
 
@@ -50,7 +49,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         return view('products.show', [
-            'product' => $product
+            'product' => $product,
         ]);
     }
 
@@ -61,7 +60,7 @@ class ProductController extends Controller
     {
         return view('products.edit', [
             'product' => $product,
-            'categories' => ProductCategory::all()
+            'categories' => ProductCategory::all(),
         ]);
     }
 
@@ -89,12 +88,12 @@ class ProductController extends Controller
             $product->delete();
 
             return response()->json([
-                'status' => 'success'
+                'status' => 'success',
             ]);
         } catch (Exception $e) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Wystąpił błąd podczas usuwania recordu.'
+                'message' => 'Wystąpił błąd podczas usuwania recordu.',
             ])->setStatusCode(500);
         }
     }
